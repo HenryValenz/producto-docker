@@ -13,8 +13,6 @@ services:
       - ./env/msv-sistemas/.env:/var/www/html/.env
     restart: unless-stopped
 
-
-
   # Microservicio 2
   microservicio-registro:
     build:
@@ -29,7 +27,6 @@ services:
       - ./env/msv-registro/.env:/var/www/html/.env
     restart: unless-stopped
 
-
 networks:
   laravel_network:
-    driver: bridge
+    driver: bridge
