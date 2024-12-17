@@ -1,0 +1,35 @@
+services:
+  # Microservicio 1
+  microservicio-sistema:
+    build:
+      context: ./microservicios/MicroservicioSistema
+      dockerfile: Dockerfile
+    container_name: msv-sistemas
+    ports:
+      - "8086:8000"
+    networks:
+      - laravel_network
+    volumes:
+      - ./env/msv-sistemas/.env:/var/www/html/.env
+    restart: unless-stopped
+
+
+
+  # Microservicio 2
+  microservicio-registro:
+    build:
+      context: ./microservicios/microservicioRegistro
+      dockerfile: Dockerfile
+    container_name: msv-registro
+    ports:
+      - "8087:8000"
+    networks:
+      - laravel_network
+    volumes:
+      - ./env/msv-registro/.env:/var/www/html/.env
+    restart: unless-stopped
+
+
+networks:
+  laravel_network:
+    driver: bridge
