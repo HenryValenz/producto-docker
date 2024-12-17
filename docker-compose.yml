@@ -2,7 +2,7 @@ services:
   # Microservicio 1
   microservicio-sistema:
     build:
-      context: ./microservicios/MicroservicioSistema
+      context: ./microservicios/MicroservicioSistema-main
       dockerfile: Dockerfile
     container_name: msv-sistemas
     ports:
@@ -16,7 +16,7 @@ services:
   # Microservicio 2
   microservicio-registro:
     build:
-      context: ./microservicios/microservicioRegistro
+      context: ./microservicios/microservicioRegistro-main
       dockerfile: Dockerfile
     container_name: msv-registro
     ports:
